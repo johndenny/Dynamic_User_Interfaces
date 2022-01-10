@@ -292,7 +292,7 @@ nav > ul > li:hover {
     position: absolute;
     top: 40%;
     font-size: 24px;
-    color: rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.4);
     border-radius: 50%;
     z-index: 3;
     padding: 4px 6px;
@@ -301,7 +301,7 @@ nav > ul > li:hover {
 
 .backArrow:hover,
 .forwardArrow:hover {
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.5);
     background-color: rgba(255, 255, 255, 0.1);
     cursor: pointer;
     user-select: none;

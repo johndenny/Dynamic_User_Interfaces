@@ -8,6 +8,7 @@ import imageCarouselPrint from "./image_carousel_print"
 import carouselSlideSwitch from "./carousel_slide_switch"
 import carouselSlideSwitchBack from "./carousel_slide_switch_back"
 import slideButton from "./slide_button"
+import imageCarouselAutomaticAdvance from "./image_carousel_automatic_advance"
 
 document.querySelectorAll("nav > ul > li").forEach(element => element.addEventListener('mouseenter', dropMenuToggle));
 document.querySelectorAll("nav > ul > li").forEach(element => element.addEventListener('mouseleave', dropMenuToggle));
@@ -20,3 +21,4 @@ document.querySelector('.backArrow').addEventListener('click', carouselSlideSwit
 document.querySelectorAll(".slideDots").forEach(element => element.addEventListener('click', slideButton));
 
 imageCarouselPrint();
+imageCarouselAutomaticAdvance();
