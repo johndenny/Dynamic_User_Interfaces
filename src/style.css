@@ -22,7 +22,7 @@ nav {
     justify-content: center;
     align-items: center;
     padding: 50px;
-    z-index: 1;
+    z-index: 5;
 }
 
 nav > ul {
@@ -111,7 +111,7 @@ nav > ul > li:hover {
     left: 0%;
     width: 100%;
     padding: 0;
-    z-index: 1;
+    z-index: 4;
 }
 
 @keyframes fadeIn {
@@ -176,12 +176,6 @@ nav > ul > li:hover {
     width: 0%;
 }
 
-.subMenu li {
-}
-
-.subMenu li:nth-child(1) {
-}
-
 .subMenu.selected {
     width: 100%;
 }
@@ -236,7 +230,7 @@ nav > ul > li:hover {
 }
 
 .modal.background {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.25);
 }
 
 .modal.selected {
@@ -276,21 +270,21 @@ nav > ul > li:hover {
     position: absolute;
     transition: transform 300ms ease-in-out;
     transform: translateX(-100%);
-    z-index: 1;
+    z-index: 0;
 }
 
 .imageSlides.selected {
-    z-index: 3;
+    z-index: 2;
     transform: translateX(0);
 }
 
 .imageSlides.remove {
-    z-index: 2;
+    z-index: 1;
     transform: translateX(100%);
 }
 
-.imageSlides.transition {
-    transition: transform 0ms;
+.imageSlides.opacity {
+    opacity: 0;
 }
 
 .backArrow,
@@ -300,14 +294,14 @@ nav > ul > li:hover {
     font-size: 24px;
     color: rgba(255, 255, 255, 0.2);
     border-radius: 50%;
-    z-index: 4;
+    z-index: 3;
     padding: 4px 6px;
     margin: 12px;
 }
 
 .backArrow:hover,
 .forwardArrow:hover {
-    color: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.4);
     background-color: rgba(255, 255, 255, 0.1);
     cursor: pointer;
     user-select: none;
