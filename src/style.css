@@ -22,6 +22,7 @@ nav {
     justify-content: center;
     align-items: center;
     padding: 50px;
+    z-index: 1;
 }
 
 nav > ul {
@@ -110,6 +111,7 @@ nav > ul > li:hover {
     left: 0%;
     width: 100%;
     padding: 0;
+    z-index: 1;
 }
 
 @keyframes fadeIn {
@@ -130,7 +132,7 @@ nav > ul > li:hover {
     background-color: rgb(245, 245, 245);
     box-shadow: -1px 0px 10px 0px rgba(0, 0, 0, .1);
     transition: width 300ms;
-    overflow: scroll
+    overflow: auto;
 }
 
 .sidebarContainer.selected {
@@ -205,15 +207,20 @@ nav > ul > li:hover {
 }
 
 .iconElementsContainer {
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: flex-end;
-    position: fixed;
-    top: 0;
-    right: 0;
     padding: 40px;
     cursor: pointer;
     transition: left 300ms;
+    z-index: 2;
+}
+
+.mobileHeader {
+    display: none;
+    justify-content: flex-end;
+    width: 100%;
+    z-index: 2;
 }
 
 .modal {
@@ -225,6 +232,7 @@ nav > ul > li:hover {
     height: 100%;
     background-color: rgba(0, 0, 0, 0);
     transition: background-color 300ms;
+    z-index: 3;
 }
 
 .modal.background {
@@ -239,10 +247,95 @@ nav > ul > li:hover {
     nav {
         display: none;
     }
-    .iconElementsContainer {
+    .mobileHeader {
         display: flex;
     }
     .modal {
         display: block;
     }
+}
+
+.imageCarouselContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.carouselFrame {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.imageSlides {
+    position: absolute;
+    transition: transform 300ms ease-in-out;
+    transform: translateX(-100%);
+    z-index: 1;
+}
+
+.imageSlides.selected {
+    z-index: 3;
+    transform: translateX(0);
+}
+
+.imageSlides.remove {
+    z-index: 2;
+    transform: translateX(100%);
+}
+
+.imageSlides.transition {
+    transition: transform 0ms;
+}
+
+.backArrow,
+.forwardArrow {
+    position: absolute;
+    top: 40%;
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    z-index: 4;
+    padding: 4px 6px;
+    margin: 12px;
+}
+
+.backArrow:hover,
+.forwardArrow:hover {
+    color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    user-select: none;
+}
+
+.backArrow {
+    transform: rotate(180deg);
+}
+
+.forwardArrow {
+    right: 0;
+}
+
+.slideButtons {
+    display: flex;
+    margin: 12px 0;
+}
+
+.slideDots {
+    cursor: pointer;
+    width: 10px;
+    height: 10px;
+    margin: 0 4px;
+    border-radius: 50%;
+    background-color: rgb(240, 240, 240);
+    transition: background-color 300ms;
+}
+
+.slideDots.selected {
+    background-color: rgb(200, 200, 200);
 }
